@@ -7,7 +7,7 @@ import logo from '../../../assets/images/NationalCode.png'
 import CModal from './../../elements/Modal/Modal';
 import './NationalCode.sass';
 function NationalCode(props) {
-	const { register, handleSubmit, formState: { errors } } = useForm();
+	const { register, handleSubmit, setError, formState: { errors } } = useForm();
 	let [ modalShow, setModalShow ] = useState(false);
 	// const handleShow = () => setShow(true);
 	// const handleClose = () => setShow(false);
@@ -29,7 +29,7 @@ function NationalCode(props) {
 			setModalShow(true);
 			// setError('nationalCode', { type: 'manual', message: 'OkCode' });
 		} else {
-			// setError('nationalCode', { type: 'required', message: 'NotOkCode' });
+			 setError('nationalCode', { type: 'required', message: 'NotOkCode' });
 		}
 		// console.log(dividend, count, sum);
 	};
